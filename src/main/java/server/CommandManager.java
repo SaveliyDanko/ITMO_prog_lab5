@@ -2,6 +2,7 @@ package server;
 
 import server.collectiondatabasecommands.Command;
 import server.exceptions.ExitToMenuException;
+import server.output.OutputManager;
 
 import java.util.Deque;
 import java.util.LinkedList;

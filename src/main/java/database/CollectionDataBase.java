@@ -2,15 +2,15 @@ package database;
 
 import client.AppConfig;
 import client.MessageConstant;
-import server.OutputManager;
+import server.output.OutputManager;
 import database.models.Flat;
 import database.models.Transport;
 import server.CsvFileManager;
 import server.exceptions.ExitToMenuException;
-import server.inputs.FlatInput;
-import server.inputs.IdInput;
-import server.inputs.NameInput;
-import server.inputs.TransportInput;
+import server.modelinput.FlatInput;
+import server.modelinput.IdInput;
+import server.modelinput.NameInput;
+import server.modelinput.TransportInput;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

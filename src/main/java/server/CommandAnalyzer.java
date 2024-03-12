@@ -4,6 +4,7 @@ import database.CollectionDataBase;
 import server.collectiondatabasecommands.*;
 import server.exceptions.ExitToMenuException;
 import server.exceptions.UnknownCommandException;
+import server.output.OutputManager;
 
 /**
  * A class that analyzes user input

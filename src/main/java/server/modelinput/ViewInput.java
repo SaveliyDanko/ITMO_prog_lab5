@@ -1,20 +1,21 @@
-package server.inputs;
+package server.modelinput;
 
-import server.CurrentInputMode;
-import server.EInputMode;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
 import client.MessageConstant;
-import server.OutputManager;
-import database.models.Transport;
+import server.output.OutputManager;
+import database.models.View;
 import server.exceptions.ExitToMenuException;
 
 /**
- * The class that is responsible for the Transport input
+ * The class that is responsible for the View input
  */
-public class TransportInput {
-    public static Transport transportInput() throws ExitToMenuException {
-        Transport transport;
 
-        OutputManager.stOutput(MessageConstant.TRANSPORT_INPUT);
+public class ViewInput {
+    public static View viewInput() throws ExitToMenuException {
+        View view;
+
+        OutputManager.stOutput(MessageConstant.VIEW_INPUT);
 
         String input;
         label:
@@ -26,28 +27,28 @@ public class TransportInput {
                     case "q":
                         throw new ExitToMenuException(MessageConstant.EXIT_TO_MENU);
                     case "1":
-                        transport = Transport.FEW;
+                        view = View.STREET;
                         break label;
                     case "2":
-                        transport = Transport.NONE;
+                        view = View.YARD;
                         break label;
                     case "3":
-                        transport = Transport.LITTLE;
+                        view = View.PARK;
                         break label;
                     case "4":
-                        transport = Transport.NORMAL;
+                        view = View.NORMAL;
                         break label;
                     default:
                         OutputManager.stOutput("Unknown Command // Try again // " +
-                                MessageConstant.TRANSPORT_INPUT);
-
+                                MessageConstant.VIEW_INPUT);
+                        break;
                 }
             }
             else {
                 CurrentInputMode.mode = EInputMode.USER_MODE;
             }
         }
-        return transport;
+        return view;
 
     }
 }

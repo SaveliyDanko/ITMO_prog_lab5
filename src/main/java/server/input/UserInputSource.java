@@ -1,4 +1,6 @@
-package server;
+package server.input;
+
+import server.input.InputSource;
 
 import java.util.Scanner;
 

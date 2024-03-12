@@ -1,6 +1,6 @@
 package server.validators;
 
-import server.OutputManager;
+import server.output.OutputManager;
 
 /**
  * A class for implementing the House number of lifts validator

@@ -1,8 +1,8 @@
-package server.inputs;
+package server.modelinput;
 
-import server.CurrentInputMode;
-import server.EInputMode;
-import server.OutputManager;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
+import server.output.OutputManager;
 import server.exceptions.ExitToMenuException;
 import server.validators.HouseNumberOfLiftsValidator;
 

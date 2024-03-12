@@ -1,21 +1,20 @@
-package server.inputs;
+package server.modelinput;
 
-import server.CurrentInputMode;
-import server.EInputMode;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
 import client.MessageConstant;
-import server.OutputManager;
-import database.models.View;
+import server.output.OutputManager;
+import database.models.Transport;
 import server.exceptions.ExitToMenuException;
 
 /**
- * The class that is responsible for the View input
+ * The class that is responsible for the Transport input
  */
+public class TransportInput {
+    public static Transport transportInput() throws ExitToMenuException {
+        Transport transport;
 
-public class ViewInput {
-    public static View viewInput() throws ExitToMenuException {
-        View view;
-
-        OutputManager.stOutput(MessageConstant.VIEW_INPUT);
+        OutputManager.stOutput(MessageConstant.TRANSPORT_INPUT);
 
         String input;
         label:
@@ -27,28 +26,28 @@ public class ViewInput {
                     case "q":
                         throw new ExitToMenuException(MessageConstant.EXIT_TO_MENU);
                     case "1":
-                        view = View.STREET;
+                        transport = Transport.FEW;
                         break label;
                     case "2":
-                        view = View.YARD;
+                        transport = Transport.NONE;
                         break label;
                     case "3":
-                        view = View.PARK;
+                        transport = Transport.LITTLE;
                         break label;
                     case "4":
-                        view = View.NORMAL;
+                        transport = Transport.NORMAL;
                         break label;
                     default:
                         OutputManager.stOutput("Unknown Command // Try again // " +
-                                MessageConstant.VIEW_INPUT);
-                        break;
+                                MessageConstant.TRANSPORT_INPUT);
+
                 }
             }
             else {
                 CurrentInputMode.mode = EInputMode.USER_MODE;
             }
         }
-        return view;
+        return transport;
 
     }
 }

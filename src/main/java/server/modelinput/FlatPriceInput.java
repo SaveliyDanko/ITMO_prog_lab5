@@ -1,9 +1,9 @@
-package server.inputs;
+package server.modelinput;
 
-import server.CurrentInputMode;
-import server.EInputMode;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
 import client.MessageConstant;
-import server.OutputManager;
+import server.output.OutputManager;
 import server.exceptions.ExitToMenuException;
 import server.validators.FlatPriceValidator;
 

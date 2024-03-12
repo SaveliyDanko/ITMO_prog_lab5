@@ -2,6 +2,7 @@ package server;
 
 import database.CollectionDataBase;
 import database.models.*;
+import server.output.OutputManager;
 import server.validators.FlatValidator;
 
 import java.io.*;

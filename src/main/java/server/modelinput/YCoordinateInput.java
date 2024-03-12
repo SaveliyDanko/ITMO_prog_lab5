@@ -1,28 +1,27 @@
-package server.inputs;
+package server.modelinput;
 
-import server.CurrentInputMode;
-import server.EInputMode;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
 import client.MessageConstant;
-import server.OutputManager;
+import server.output.OutputManager;
 import server.exceptions.ExitToMenuException;
-import server.validators.AreaValidator;
+import server.validators.YCoordinateValidator;
 
 /**
- * The class that is responsible for the area input
+ * The class that is responsible for the y coordinate input
  */
-
-public class AreaInput {
-    public static float input() throws ExitToMenuException{
-        float area;
+public class YCoordinateInput {
+    public static long input() throws ExitToMenuException {
+        long y;
         String input;
-        OutputManager.stOutput("Enter Flat `area` or `q` for exit to menu");
+        OutputManager.stOutput("Enter `y` coordinate or `q` for exit to menu");
         while (true){
             if (CurrentInputMode.hasNextLine()){
                 input = CurrentInputMode.getNextLine();
                 if (input.equals("q")){
                     throw new ExitToMenuException(MessageConstant.EXIT_TO_MENU);
                 }
-                else if(AreaValidator.validator(input)){
+                else if(YCoordinateValidator.validator(input)){
                     break;
                 }
             }
@@ -30,7 +29,7 @@ public class AreaInput {
                 CurrentInputMode.mode = EInputMode.USER_MODE;
             }
         }
-        area = Float.parseFloat(input);
-        return area;
+        y = Long.parseLong(input);
+        return y;
     }
 }

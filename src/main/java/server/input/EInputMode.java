@@ -1,4 +1,4 @@
-package server;
+package server.input;
 
 /**
  * Enum with current input mode

@@ -1,9 +1,9 @@
 package server.collectiondatabasecommands;
 
 import client.MessageConstant;
-import server.CurrentInputMode;
-import server.EInputMode;
-import server.OutputManager;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
+import server.output.OutputManager;
 import server.exceptions.ExitToMenuException;
 
 /**

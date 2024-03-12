@@ -1,27 +1,29 @@
-package server.inputs;
+package server.modelinput;
 
-import server.CurrentInputMode;
-import server.EInputMode;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
 import client.MessageConstant;
-import server.OutputManager;
+import server.output.OutputManager;
 import server.exceptions.ExitToMenuException;
-import server.validators.XCoordinateValidator;
+import server.validators.IdValidator;
 
 /**
- * The class that is responsible for the x coordinate input
+ * The class that is responsible for the id input
  */
-public class XCoordinateInput {
-    public static float input() throws ExitToMenuException{
-        float x;
+public class IdInput {
+    public static Long idInput() throws ExitToMenuException{
+        OutputManager.stOutput("Input ID or `q` for exit to menu");
+
         String input;
-        OutputManager.stOutput("Enter `x` coordinate or `q` for exit to menu");
+        long id;
         while (true){
             if (CurrentInputMode.hasNextLine()){
                 input = CurrentInputMode.getNextLine();
+
                 if (input.equals("q")){
                     throw new ExitToMenuException(MessageConstant.EXIT_TO_MENU);
                 }
-                else if(XCoordinateValidator.validator(input)){
+                else if(IdValidator.validator(input)){
                     break;
                 }
             }
@@ -29,7 +31,7 @@ public class XCoordinateInput {
                 CurrentInputMode.mode = EInputMode.USER_MODE;
             }
         }
-        x = Float.parseFloat(input);
-        return x;
+        id = Long.parseLong(input);
+        return id;
     }
 }

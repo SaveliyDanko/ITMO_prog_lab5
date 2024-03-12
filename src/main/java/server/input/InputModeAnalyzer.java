@@ -1,7 +1,12 @@
-package server;
+package server.input;
 
+import server.CommandAnalyzer;
+import server.CommandManager;
 import server.collectiondatabasecommands.ExecuteScriptCommand;
 import server.exceptions.ExitToMenuException;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
+import server.input.FileInputSource;
 
 import java.io.File;
 

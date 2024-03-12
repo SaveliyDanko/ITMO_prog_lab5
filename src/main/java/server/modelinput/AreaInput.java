@@ -1,29 +1,28 @@
-package server.inputs;
+package server.modelinput;
 
-import server.CurrentInputMode;
-import server.EInputMode;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
 import client.MessageConstant;
-import server.OutputManager;
+import server.output.OutputManager;
 import server.exceptions.ExitToMenuException;
-import server.validators.IdValidator;
+import server.validators.AreaValidator;
 
 /**
- * The class that is responsible for the id input
+ * The class that is responsible for the area input
  */
-public class IdInput {
-    public static Long idInput() throws ExitToMenuException{
-        OutputManager.stOutput("Input ID or `q` for exit to menu");
 
+public class AreaInput {
+    public static float input() throws ExitToMenuException{
+        float area;
         String input;
-        long id;
+        OutputManager.stOutput("Enter Flat `area` or `q` for exit to menu");
         while (true){
             if (CurrentInputMode.hasNextLine()){
                 input = CurrentInputMode.getNextLine();
-
                 if (input.equals("q")){
                     throw new ExitToMenuException(MessageConstant.EXIT_TO_MENU);
                 }
-                else if(IdValidator.validator(input)){
+                else if(AreaValidator.validator(input)){
                     break;
                 }
             }
@@ -31,7 +30,7 @@ public class IdInput {
                 CurrentInputMode.mode = EInputMode.USER_MODE;
             }
         }
-        id = Long.parseLong(input);
-        return id;
+        area = Float.parseFloat(input);
+        return area;
     }
 }

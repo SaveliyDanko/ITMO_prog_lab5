@@ -1,4 +1,4 @@
-package server;
+package server.output;
 
 /**
  * The class that is responsible for outputting information to the console

@@ -1,4 +1,4 @@
-package server.inputs;
+package server.modelinput;
 
 
 import database.models.House;

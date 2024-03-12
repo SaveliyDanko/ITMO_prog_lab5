@@ -1,7 +1,6 @@
-package server;
+package server.input;
 
-import server.InputSource;
-import server.OutputManager;
+import server.output.OutputManager;
 
 import java.io.*;
 import java.util.Deque;

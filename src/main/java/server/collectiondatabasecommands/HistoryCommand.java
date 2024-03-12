@@ -1,7 +1,7 @@
 package server.collectiondatabasecommands;
 
 import client.MessageConstant;
-import server.OutputManager;
+import server.output.OutputManager;
 import server.CommandManager;
 import server.exceptions.ExitToMenuException;
 

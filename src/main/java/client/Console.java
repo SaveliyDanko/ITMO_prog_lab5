@@ -2,6 +2,11 @@ package client;
 
 import server.*;
 import server.exceptions.ExitToMenuException;
+import server.input.CurrentInputMode;
+import server.input.EInputMode;
+import server.input.InputModeAnalyzer;
+import server.input.UserInputSource;
+import server.output.OutputManager;
 
 /**
  * A class for interpreting the user console
