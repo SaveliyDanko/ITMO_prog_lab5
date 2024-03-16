@@ -2,6 +2,9 @@ package database;
 
 /**
  * A class that contains help information of Data Base
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class CollectionDataBaseHelpInformation {

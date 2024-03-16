@@ -4,14 +4,13 @@ import server.CommandAnalyzer;
 import server.CommandManager;
 import server.collectiondatabasecommands.ExecuteScriptCommand;
 import server.exceptions.ExitToMenuException;
-import server.input.CurrentInputMode;
-import server.input.EInputMode;
-import server.input.FileInputSource;
-
 import java.io.File;
 
 /**
  * The class that is responsible for analyzing the current input mode
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class InputModeAnalyzer {

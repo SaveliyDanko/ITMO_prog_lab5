@@ -9,6 +9,9 @@ import server.validators.XCoordinateValidator;
 
 /**
  * The class that is responsible for the x coordinate input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class XCoordinateInput {
     public static float input() throws ExitToMenuException{

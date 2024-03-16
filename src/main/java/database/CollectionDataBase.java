@@ -20,6 +20,9 @@ import java.util.TreeMap;
 
 /**
  * The class that is responsible for implementing the database
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class CollectionDataBase implements DataBaseI{

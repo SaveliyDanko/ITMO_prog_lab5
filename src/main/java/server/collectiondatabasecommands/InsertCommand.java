@@ -5,6 +5,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * Insert command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class InsertCommand implements Command{
     CollectionDataBase dataBase;

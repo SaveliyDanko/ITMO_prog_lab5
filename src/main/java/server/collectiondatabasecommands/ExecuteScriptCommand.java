@@ -8,6 +8,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * Execute script command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class ExecuteScriptCommand implements Command{

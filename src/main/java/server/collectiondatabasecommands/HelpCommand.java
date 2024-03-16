@@ -4,6 +4,9 @@ import database.CollectionDataBase;
 
 /**
  * Help command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class HelpCommand implements Command{

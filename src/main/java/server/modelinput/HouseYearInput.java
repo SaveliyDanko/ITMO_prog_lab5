@@ -8,6 +8,9 @@ import server.validators.HouseYearValidator;
 
 /**
  * The class that is responsible for the House year input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class HouseYearInput {
     public static long input() throws ExitToMenuException {

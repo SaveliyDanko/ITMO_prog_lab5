@@ -4,6 +4,9 @@ import server.output.OutputManager;
 
 /**
  * A class for implementing the House year validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class HouseYearValidator {
     public static boolean validator(String year){

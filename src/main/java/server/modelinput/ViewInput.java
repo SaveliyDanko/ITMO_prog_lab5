@@ -9,6 +9,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * The class that is responsible for the View input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class ViewInput {

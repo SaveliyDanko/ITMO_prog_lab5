@@ -1,11 +1,12 @@
 package server.input;
 
-import server.input.InputSource;
-
 import java.util.Scanner;
 
 /**
  * A class that implements input from user input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class UserInputSource implements InputSource {

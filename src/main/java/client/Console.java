@@ -8,6 +8,7 @@ import server.input.InputModeAnalyzer;
 import server.input.UserInputSource;
 import server.output.OutputManager;
 
+
 /**
  * A class for interpreting the user console
  */
@@ -19,7 +20,7 @@ public class Console {
      */
     public static void start(){
         if (AppConfig.appArgs.length != 1){
-            OutputManager.logError("Invalid File Path. Try again");
+            OutputManager.logError("Invalid File Path. File path must consist one argument. Try again");
             System.exit(0);
         }
         else {

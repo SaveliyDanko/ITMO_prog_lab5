@@ -1,7 +1,10 @@
 package server.input;
 
 /**
- * a class that contains information about the current mode of input and output
+ * A class that contains information about the current mode of input and output
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class CurrentInputMode {

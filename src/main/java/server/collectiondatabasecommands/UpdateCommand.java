@@ -5,6 +5,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * Update command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class UpdateCommand implements Command{
     CollectionDataBase dataBase;

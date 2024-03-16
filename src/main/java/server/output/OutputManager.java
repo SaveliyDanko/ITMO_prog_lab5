@@ -2,6 +2,9 @@ package server.output;
 
 /**
  * The class that is responsible for outputting information to the console
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class OutputManager {

@@ -6,6 +6,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * Remove command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class RemoveCommand implements Command{
     CollectionDataBase dataBase;

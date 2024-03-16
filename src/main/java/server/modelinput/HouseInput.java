@@ -6,6 +6,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * The class that is responsible for the House input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class HouseInput {
     public static House houseInput() throws ExitToMenuException {

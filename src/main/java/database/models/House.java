@@ -5,6 +5,9 @@ import java.io.Serializable;
 
 /**
  * House class
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class House implements Serializable {
@@ -43,7 +46,7 @@ public class House implements Serializable {
 
     /**
      * get name
-     * @return name
+     * @return value of field name
      */
     public String getName() {
         return name;
@@ -51,7 +54,7 @@ public class House implements Serializable {
 
     /**
      * get year
-     * @return year
+     * @return value of field year
      */
     public Long getYear() {
         return year;
@@ -59,7 +62,7 @@ public class House implements Serializable {
 
     /**
      * get getNumberOfFloors
-     * @return getNumberOfFloors
+     * @return value of field getNumberOfFloors
      */
     public Long getNumberOfFloors() {
         return numberOfFloors;
@@ -67,7 +70,7 @@ public class House implements Serializable {
 
     /**
      * get getNumberOfFlatsOnFloor
-     * @return getNumberOfFlatsOnFloor
+     * @return value of field getNumberOfFlatsOnFloor
      */
     public int getNumberOfFlatsOnFloor() {
         return numberOfFlatsOnFloor;
@@ -75,21 +78,10 @@ public class House implements Serializable {
 
     /**
      * get getNumberOfLifts
-     * @return getNumberOfLifts
+     * @return value of field getNumberOfLifts
      */
     public int getNumberOfLifts() {
         return numberOfLifts;
-    }
-
-    @Override
-    public String toString() {
-        return "House{" +
-                "name='" + name + '\'' +
-                ", year=" + year +
-                ", numberOfFloors=" + numberOfFloors +
-                ", numberOfFlatsOnFloor=" + numberOfFlatsOnFloor +
-                ", numberOfLifts=" + numberOfLifts +
-                '}';
     }
 
     public House(String name, Long year, Long numberOfFloors, int numberOfFlatsOnFloor, int numberOfLifts) {
@@ -103,4 +95,14 @@ public class House implements Serializable {
         this.numberOfLifts = numberOfLifts;
     }
 
+    @Override
+    public String toString() {
+        return "House{" +
+                "name='" + name + '\'' +
+                ", year=" + year +
+                ", numberOfFloors=" + numberOfFloors +
+                ", numberOfFlatsOnFloor=" + numberOfFlatsOnFloor +
+                ", numberOfLifts=" + numberOfLifts +
+                '}';
+    }
 }

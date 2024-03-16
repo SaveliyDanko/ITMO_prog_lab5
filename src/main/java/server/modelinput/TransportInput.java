@@ -9,6 +9,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * The class that is responsible for the Transport input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class TransportInput {
     public static Transport transportInput() throws ExitToMenuException {

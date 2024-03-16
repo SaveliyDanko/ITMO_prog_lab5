@@ -8,6 +8,9 @@ import java.util.LinkedList;
 
 /**
  * A class that implements input from a script file
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class FileInputSource implements InputSource {

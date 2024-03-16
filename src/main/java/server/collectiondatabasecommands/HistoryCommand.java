@@ -7,6 +7,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * History command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class HistoryCommand implements Command{

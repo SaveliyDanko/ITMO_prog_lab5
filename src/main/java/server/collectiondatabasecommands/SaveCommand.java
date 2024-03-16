@@ -5,6 +5,9 @@ import server.exceptions.ExitToMenuException;
 
 /**
  * Save command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class SaveCommand implements Command{
     CollectionDataBase dataBase;

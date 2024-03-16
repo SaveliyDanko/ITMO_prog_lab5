@@ -4,6 +4,9 @@ import java.io.IOException;
 
 /**
  * An interface that implements classes that are responsible for input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public interface InputSource {
 

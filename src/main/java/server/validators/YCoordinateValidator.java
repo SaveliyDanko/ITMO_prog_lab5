@@ -4,6 +4,9 @@ import server.output.OutputManager;
 
 /**
  * A class for implementing the y coordinate validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class YCoordinateValidator {
     public static boolean validator(String y){

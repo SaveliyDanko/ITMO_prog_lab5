@@ -9,6 +9,9 @@ import server.validators.FlatNumberOfRoomsValidator;
 
 /**
  * The class that is responsible for the flat numbers of rooms input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class FlatNumberOfRoomsInput {
     public static Long input() throws ExitToMenuException {

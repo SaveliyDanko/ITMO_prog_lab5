@@ -9,6 +9,9 @@ import server.validators.HouseNumberOfFlatsOnFloorValidator;
 
 /**
  * The class that is responsible for the House number of flats on floor input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class HouseNumberOfFlatsOnFloorInput {
     public static Integer input() throws ExitToMenuException {

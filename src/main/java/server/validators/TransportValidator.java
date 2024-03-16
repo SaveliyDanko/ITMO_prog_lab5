@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * A class for implementing the transport validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class TransportValidator {
     public static boolean validate(String line){

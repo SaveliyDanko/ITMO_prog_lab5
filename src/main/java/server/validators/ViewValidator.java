@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * A class for implementing the view validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class ViewValidator {
     public static boolean validator(String line){

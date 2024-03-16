@@ -1,9 +1,10 @@
 package client;
 
-import java.io.InputStream;
-
 /**
  * A class that contains App config
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class AppConfig {
 

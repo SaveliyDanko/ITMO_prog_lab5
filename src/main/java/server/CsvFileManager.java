@@ -8,7 +8,21 @@ import server.validators.FlatValidator;
 import java.io.*;
 import java.util.LinkedHashMap;
 
+/**
+ * The class that is responsible for working with the csv file
+ *
+ * @since 1.0
+ * @author savadanko
+ */
+
 public class CsvFileManager {
+
+    /**
+     * The method that is responsible for saving Flat objects to the file
+     *
+     * @param collection collection of Flat objects
+     * @param filePath path to CSV file
+     */
     public static void saveFlatToFile(LinkedHashMap<Long, Flat> collection, String filePath) {
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
@@ -37,6 +51,11 @@ public class CsvFileManager {
         }
     }
 
+    /**
+     * The method that is responsible for filling the database with objects from the file
+     *
+     * @param filePath path to CSV file
+     */
     public static void collectionFiller(String filePath){
         CollectionDataBase dataBase = CollectionDataBase.getDataBaseInstance();
 

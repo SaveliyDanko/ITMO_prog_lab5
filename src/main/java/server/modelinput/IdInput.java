@@ -9,6 +9,9 @@ import server.validators.IdValidator;
 
 /**
  * The class that is responsible for the id input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class IdInput {
     public static Long idInput() throws ExitToMenuException{

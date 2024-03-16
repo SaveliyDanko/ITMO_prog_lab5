@@ -9,6 +9,9 @@ import server.validators.NameValidator;
 
 /**
  * The class that is responsible for the name input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class NameInput {
     public static String flat() throws ExitToMenuException {

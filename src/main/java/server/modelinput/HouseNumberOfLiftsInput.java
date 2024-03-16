@@ -8,6 +8,9 @@ import server.validators.HouseNumberOfLiftsValidator;
 
 /**
  * The class that is responsible for the House number of lifts input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class HouseNumberOfLiftsInput {
     public static Integer input() throws ExitToMenuException {

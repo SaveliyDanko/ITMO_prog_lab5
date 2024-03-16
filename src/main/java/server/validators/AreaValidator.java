@@ -4,6 +4,9 @@ import server.output.OutputManager;
 
 /**
  * A class for implementing the area validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class AreaValidator {

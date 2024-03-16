@@ -9,6 +9,9 @@ import server.validators.YCoordinateValidator;
 
 /**
  * The class that is responsible for the y coordinate input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class YCoordinateInput {
     public static long input() throws ExitToMenuException {

@@ -5,6 +5,9 @@ import java.util.Set;
 
 /**
  * The class that is responsible for implementing unique IDs
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class IdGenerator {

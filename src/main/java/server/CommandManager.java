@@ -9,6 +9,9 @@ import java.util.LinkedList;
 
 /**
  * A class that implements the design pattern of the command and
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class CommandManager {

@@ -4,6 +4,9 @@ import server.output.OutputManager;
 
 /**
  * A class for implementing the name validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class NameValidator {
     public static boolean validate(String name){

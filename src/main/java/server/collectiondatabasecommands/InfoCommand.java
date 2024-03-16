@@ -4,6 +4,9 @@ import database.CollectionDataBase;
 
 /**
  * Info command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class InfoCommand implements Command{
     CollectionDataBase dataBase;

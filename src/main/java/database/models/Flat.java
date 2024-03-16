@@ -9,6 +9,9 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * Flat class
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class Flat implements Comparable<Flat>, Serializable {
@@ -69,13 +72,12 @@ public class Flat implements Comparable<Flat>, Serializable {
      */
     private final House house; //Поле не может быть null
 
-    // automatic generate id
-
     public Flat(String name, Coordinates coordinates, float area, long numberOfRooms, Float price,
                 View view, Transport transport, House house) {
         if (name == null || name.isEmpty() || area <= 0 || numberOfRooms <= 0 || price <= 0 || transport == null || house == null) {
             throw new IllegalArgumentException("Invalid parameter value.");
         }
+        // automatic generate id
         this.id = IdGenerator.generateUniqueId();
         this.name = name;
         this.coordinates = coordinates;
@@ -94,6 +96,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * set ID
+     * @param id value of field id
      */
     public void setId(long id) {
         this.id = id;
@@ -101,6 +104,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * set creation date
+     * @param creationDate value of field creationDate
      */
     public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
@@ -108,7 +112,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get id
-     * @return id
+     * @return value of field id
      */
     public long getId() {
         return id;
@@ -116,7 +120,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get name
-     * @return name
+     * @return value of field name
      */
     public String getName() {
         return name;
@@ -124,7 +128,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get coordinates
-     * @return Coordinates
+     * @return return Coordinates object
      */
     public Coordinates getCoordinates() {
         return coordinates;
@@ -132,7 +136,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get creation date
-     * @return creationDate
+     * @return value of field creationDate
      */
     public String getCreationDate() {
         return creationDate;
@@ -140,7 +144,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get area
-     * @return area
+     * @return value of field area
      */
     public float getArea() {
         return area;
@@ -148,7 +152,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get number of rooms
-     * @return numberOfRooms
+     * @return value of filed numberOfRooms
      */
     public long getNumberOfRooms() {
         return numberOfRooms;
@@ -156,7 +160,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get price
-     * @return price
+     * @return value of field price
      */
     public Float getPrice() {
         return price;
@@ -164,7 +168,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get View
-     * @return View
+     * @return value of field View
      */
     public View getView() {
         return view;
@@ -172,7 +176,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get Transport
-     * @return Transport
+     * @return value of field Transport
      */
     public Transport getTransport() {
         return transport;
@@ -180,7 +184,7 @@ public class Flat implements Comparable<Flat>, Serializable {
 
     /**
      * get House
-     * @return House
+     * @return House object
      */
     public House getHouse() {
         return house;
@@ -189,12 +193,13 @@ public class Flat implements Comparable<Flat>, Serializable {
     /**
      * Compare by price
      * @param f the object to be compared.
-     * @return int
+     * @return negative if flat price lower that f price, positive if flat price more than f price, zero if flat price equals f price
      */
     @Override
     public int compareTo(Flat f) {
         return (int) (this.price - f.price);
     }
+
 
     @Override
     public String toString() {

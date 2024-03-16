@@ -2,6 +2,9 @@ package client;
 
 /**
  * A class that contains global text constants
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class MessageConstant {
     public static final String ANSI_RESET = "\u001B[0m";

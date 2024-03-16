@@ -2,6 +2,9 @@ package server.validators;
 
 /**
  * A class for implementing the flat validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class FlatValidator {
 

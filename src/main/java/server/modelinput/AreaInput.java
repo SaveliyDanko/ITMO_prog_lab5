@@ -9,6 +9,9 @@ import server.validators.AreaValidator;
 
 /**
  * The class that is responsible for the area input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 
 public class AreaInput {

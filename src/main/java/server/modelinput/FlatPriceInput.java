@@ -9,6 +9,9 @@ import server.validators.FlatPriceValidator;
 
 /**
  * The class that is responsible for the flat price input
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class FlatPriceInput {
     public static Float input() throws ExitToMenuException {

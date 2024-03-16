@@ -3,6 +3,13 @@ package server.collectiondatabasecommands;
 import database.CollectionDataBase;
 import server.exceptions.ExitToMenuException;
 
+/**
+ * Min By Name command implementation for the Command design pattern
+ *
+ * @since 1.0
+ * @author savadanko
+ */
+
 public class MinByNameCommand implements Command{
     CollectionDataBase dataBase;
 

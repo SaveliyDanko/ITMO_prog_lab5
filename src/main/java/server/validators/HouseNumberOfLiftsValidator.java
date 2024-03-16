@@ -4,6 +4,9 @@ import server.output.OutputManager;
 
 /**
  * A class for implementing the House number of lifts validator
+ *
+ * @since 1.0
+ * @author savadanko
  */
 public class HouseNumberOfLiftsValidator {
     public static boolean validator(String numberOfFloors){
