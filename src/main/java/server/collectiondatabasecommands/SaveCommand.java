@@ -1,7 +1,6 @@
 package server.collectiondatabasecommands;
 
 import database.CollectionDataBase;
-import server.exceptions.ExitToMenuException;
 
 /**
  * Save command implementation for the Command design pattern
@@ -11,14 +10,15 @@ import server.exceptions.ExitToMenuException;
  */
 public class SaveCommand implements Command{
     CollectionDataBase dataBase;
-
-    public SaveCommand(CollectionDataBase dataBase) {
+    String[] args;
+    public SaveCommand(CollectionDataBase dataBase, String[] args) {
         this.dataBase = dataBase;
+        this.args = args;
     }
 
     @Override
-    public void execute() throws ExitToMenuException {
-        dataBase.save();
+    public void execute() {
+        dataBase.save(args);
     }
 
     @Override

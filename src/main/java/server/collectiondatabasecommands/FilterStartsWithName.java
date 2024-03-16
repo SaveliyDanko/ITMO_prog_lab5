@@ -12,14 +12,16 @@ import server.exceptions.ExitToMenuException;
 
 public class FilterStartsWithName implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public FilterStartsWithName(CollectionDataBase dataBase) {
-        this.dataBase = dataBase;
+    public FilterStartsWithName(CollectionDataBase dataBase, String[] args) {
+            this.dataBase = dataBase;
+            this.args = args;
     }
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.filterStartsWithName();
+        dataBase.filterStartsWithName(args);
     }
 
     @Override

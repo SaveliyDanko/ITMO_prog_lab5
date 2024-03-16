@@ -4,7 +4,6 @@ import server.*;
 import server.exceptions.ExitToMenuException;
 import server.input.CurrentInputMode;
 import server.input.EInputMode;
-import server.input.InputModeAnalyzer;
 import server.input.UserInputSource;
 import server.output.OutputManager;
 
@@ -34,7 +33,7 @@ public class Console {
             while (CurrentInputMode.hasNextLine()){
                 try {
                     String line = CurrentInputMode.getNextLine();
-                    InputModeAnalyzer.analyze(line);
+                    CommandAnalyzer.analyze(line);
                 }
                 catch (ExitToMenuException e){
                     OutputManager.logError(e.getMessage());

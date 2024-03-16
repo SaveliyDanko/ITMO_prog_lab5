@@ -1,4 +1,3 @@
-server/collectiondatabasecommands/ExecuteScriptCommand.class
 server/modelinput/HouseInput.class
 App.class
 server/collectiondatabasecommands/UpdateCommand.class
@@ -8,7 +7,6 @@ server/collectiondatabasecommands/RemoveLowerCommand.class
 database/DataBaseI.class
 server/CommandManager.class
 server/validators/IdValidator.class
-server/input/InputModeAnalyzer.class
 server/modelinput/HouseNumberOfLiftsInput.class
 server/collectiondatabasecommands/Command.class
 server/modelinput/HouseNumberOfFlatsOnFloorInput.class

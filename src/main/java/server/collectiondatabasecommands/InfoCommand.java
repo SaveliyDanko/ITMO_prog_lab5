@@ -10,14 +10,16 @@ import database.CollectionDataBase;
  */
 public class InfoCommand implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public InfoCommand(CollectionDataBase dataBase) {
+    public InfoCommand(CollectionDataBase dataBase, String[] args) {
         this.dataBase = dataBase;
+        this.args = args;
     }
 
     @Override
     public void execute() {
-        dataBase.info();
+        dataBase.info(args);
     }
 
     @Override

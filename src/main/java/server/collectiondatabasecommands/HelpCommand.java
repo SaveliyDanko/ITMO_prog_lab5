@@ -11,14 +11,16 @@ import database.CollectionDataBase;
 
 public class HelpCommand implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public HelpCommand(CollectionDataBase dataBase) {
+    public HelpCommand(CollectionDataBase dataBase, String[] args) {
         this.dataBase = dataBase;
+        this.args = args;
     }
 
     @Override
     public void execute(){
-        dataBase.help();
+        dataBase.help(args);
     }
 
     @Override

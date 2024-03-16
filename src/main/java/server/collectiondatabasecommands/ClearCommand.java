@@ -11,14 +11,16 @@ import database.CollectionDataBase;
 
 public class ClearCommand implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public ClearCommand(CollectionDataBase dataBase) {
+    public ClearCommand(CollectionDataBase dataBase, String[] args) {
         this.dataBase = dataBase;
+        this.args = args;
     }
 
     @Override
     public void execute() {
-        dataBase.clear();
+        dataBase.clear(args);
     }
 
     @Override

@@ -10,14 +10,16 @@ import database.CollectionDataBase;
  */
 public class ShowCommand implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public ShowCommand(CollectionDataBase dataBase) {
+    public ShowCommand(CollectionDataBase dataBase, String[] args) {
         this.dataBase = dataBase;
+        this.args = args;
     }
 
     @Override
     public void execute() {
-        dataBase.show();
+        dataBase.show(args);
     }
 
     @Override

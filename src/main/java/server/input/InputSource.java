@@ -1,7 +1,5 @@
 package server.input;
 
-import java.io.IOException;
-
 /**
  * An interface that implements classes that are responsible for input
  *
@@ -20,5 +18,5 @@ public interface InputSource {
      * A function that returns the following input
      * @return string
      */
-    String getNextLine() throws IOException;
+    String getNextLine();
 }

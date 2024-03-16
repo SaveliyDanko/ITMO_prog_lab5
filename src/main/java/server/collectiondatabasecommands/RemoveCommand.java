@@ -12,14 +12,16 @@ import server.exceptions.ExitToMenuException;
  */
 public class RemoveCommand implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public RemoveCommand(CollectionDataBase dataBase) {
-        this.dataBase = dataBase;
+    public RemoveCommand(CollectionDataBase dataBase, String[] args) {
+            this.dataBase = dataBase;
+            this.args = args;
     }
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.remove();
+        dataBase.remove(args);
     }
 
     @Override

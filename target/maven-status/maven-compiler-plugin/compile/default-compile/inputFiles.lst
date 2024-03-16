@@ -41,13 +41,11 @@
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/database/models/View.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/ViewInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/MinByNameCommand.java
-/home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/ExecuteScriptCommand.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/ClearCommand.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/FlatNumberOfRoomsInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/FlatPriceInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/validators/XCoordinateValidator.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/validators/FlatValidator.java
-/home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/input/InputModeAnalyzer.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/client/AppConfig.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/XCoordinateInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/validators/HouseNumberOfFloorsValidator.java

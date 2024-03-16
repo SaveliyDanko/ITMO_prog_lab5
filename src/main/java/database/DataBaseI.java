@@ -17,15 +17,15 @@ public interface DataBaseI{
     /**
      * Dara Base help information
      */
-    void help();
+    void help(String[] args);
 
     /**
      * Dara Base info information
      */
-    void info();
+    void info(String[] args);
 
     /**
      * Dara Base show information
      */
-    void show();
+    void show(String[] args);
 }

@@ -3,7 +3,6 @@ package server.collectiondatabasecommands;
 import client.MessageConstant;
 import server.output.OutputManager;
 import server.CommandManager;
-import server.exceptions.ExitToMenuException;
 
 /**
  * History command implementation for the Command design pattern
@@ -13,15 +12,28 @@ import server.exceptions.ExitToMenuException;
  */
 
 public class HistoryCommand implements Command{
-    CommandManager commandManager = CommandManager.getCommandManagerInstance();
+    CommandManager commandManager;
+    String[] args;
+    public HistoryCommand(String[] args) {
+        commandManager = CommandManager.getCommandManagerInstance();
+        this.args = args;
+    }
+
+
     @Override
-    public void execute() throws ExitToMenuException {
-        if (CommandManager.history.isEmpty()){
-            OutputManager.stOutput("Commands history is empty");
+    public void execute() {
+        if (args.length != 0){
+            OutputManager.logError("History command should not have arguments");
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
         }
         else {
-            commandManager.showHistory();
-            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+            if (CommandManager.history.isEmpty()){
+                OutputManager.stOutput("Commands history is empty");
+            }
+            else {
+                commandManager.showHistory();
+                OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+            }
         }
     }
 

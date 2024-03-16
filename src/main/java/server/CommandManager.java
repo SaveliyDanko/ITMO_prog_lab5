@@ -4,8 +4,7 @@ import server.collectiondatabasecommands.Command;
 import server.exceptions.ExitToMenuException;
 import server.output.OutputManager;
 
-import java.util.Deque;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 /**
  * A class that implements the design pattern of the command and
@@ -26,7 +25,7 @@ public class CommandManager {
     /**
      * Stack for commands history
      */
-    public static Deque<Command> history = new LinkedList<>();
+    public static ArrayList<Command> history = new ArrayList<>();
 
     Command command;
 
@@ -42,17 +41,17 @@ public class CommandManager {
      * The function, that execute current command
      * @throws ExitToMenuException exception, that discard user to menu
      */
-    public void executeCommand() throws ExitToMenuException {
+    public void executeCommand() throws ExitToMenuException{
         command.execute();
-        history.push(command);
+        history.add(command);
     }
 
     /**
      * The function, that show command history
      */
     public void showHistory(){
-        for (Command command : history){
-            OutputManager.stOutput(command.toString());
+        for (Command i : history){
+            OutputManager.stOutput(i.toString());
         }
     }
 }

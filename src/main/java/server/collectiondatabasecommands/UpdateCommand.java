@@ -11,14 +11,17 @@ import server.exceptions.ExitToMenuException;
  */
 public class UpdateCommand implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public UpdateCommand(CollectionDataBase dataBase) {
-        this.dataBase = dataBase;
+
+    public UpdateCommand(CollectionDataBase dataBase, String[] args) {
+            this.dataBase = dataBase;
+            this.args = args;
     }
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.update();
+        dataBase.update(args);
     }
     @Override
     public String toString() {

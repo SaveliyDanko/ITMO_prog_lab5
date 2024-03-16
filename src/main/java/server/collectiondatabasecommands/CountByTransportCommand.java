@@ -12,14 +12,15 @@ import server.exceptions.ExitToMenuException;
 
 public class CountByTransportCommand implements Command{
     CollectionDataBase dataBase;
-
-    public CountByTransportCommand(CollectionDataBase dataBase) {
+    String[] args;
+    public CountByTransportCommand(CollectionDataBase dataBase, String[] args) {
         this.dataBase = dataBase;
+        this.args = args;
     }
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.countByTransport();
+        dataBase.countByTransport(args);
     }
 
     @Override

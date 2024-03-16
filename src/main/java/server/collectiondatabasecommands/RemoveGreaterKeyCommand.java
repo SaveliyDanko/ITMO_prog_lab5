@@ -11,14 +11,15 @@ import server.exceptions.ExitToMenuException;
  */
 public class RemoveGreaterKeyCommand implements Command{
     CollectionDataBase dataBase;
-
-    public RemoveGreaterKeyCommand(CollectionDataBase dataBase){
-        this.dataBase = dataBase;
+    String[] args;
+    public RemoveGreaterKeyCommand(CollectionDataBase dataBase, String[] args){
+            this.dataBase = dataBase;
+            this.args = args;
     }
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.removeGreaterKey();
+        dataBase.removeGreaterKey(args);
     }
 
     @Override

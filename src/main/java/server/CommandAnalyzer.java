@@ -6,6 +6,8 @@ import server.exceptions.ExitToMenuException;
 import server.exceptions.UnknownCommandException;
 import server.output.OutputManager;
 
+import java.util.Arrays;
+
 /**
  * A class that analyzes user input
  *
@@ -17,62 +19,62 @@ public class CommandAnalyzer {
 
     /**
      * A function that processes input and defines commands
-     * @param command current command
+     *
+     * @param line current user input
      * @throws ExitToMenuException exception, that discard user into menu
      */
-    public static void analyze(String command) throws ExitToMenuException {
+    public static void analyze(String line) throws ExitToMenuException{
         CommandManager commandManager = CommandManager.getCommandManagerInstance();
         CollectionDataBase dataBase = CollectionDataBase.getDataBaseInstance();
         Command currentCommand = null;
+
+        String[] commandArgs = Arrays.copyOfRange(line.split(" "), 1, line.split(" ").length);
         try {
-            switch (command.split(" ")[0]){
+            switch (line.split(" ")[0]){
 
-                case "help": currentCommand = new HelpCommand(dataBase);
+                case "help": currentCommand = new HelpCommand(dataBase, commandArgs);
                 break;
 
-                case "info": currentCommand = new InfoCommand(dataBase);
+                case "info": currentCommand = new InfoCommand(dataBase, commandArgs);
                 break;
 
-                case "show": currentCommand = new ShowCommand(dataBase);
+                case "show": currentCommand = new ShowCommand(dataBase, commandArgs);
                 break;
 
-                case "insert": currentCommand = new InsertCommand(dataBase);
+                case "insert": currentCommand = new InsertCommand(dataBase, commandArgs);
                 break;
 
-                case "update": currentCommand = new UpdateCommand(dataBase);
+                case "update": currentCommand = new UpdateCommand(dataBase, commandArgs);
                 break;
 
-                case "remove": currentCommand = new RemoveCommand(dataBase);
+                case "remove_key": currentCommand = new RemoveCommand(dataBase, commandArgs);
                 break;
 
-                case "clear": currentCommand = new ClearCommand(dataBase);
+                case "clear": currentCommand = new ClearCommand(dataBase, commandArgs);
                 break;
 
-                case "save": currentCommand = new SaveCommand(dataBase);
-                break;
-
-                case "execute_script": currentCommand = new ExecuteScriptCommand();
+                case "save": currentCommand = new SaveCommand(dataBase, commandArgs);
                 break;
 
                 case "exit": System.exit(0);
                 break;
 
-                case "remove_lower": currentCommand = new RemoveLowerCommand(dataBase);
+                case "remove_lower": currentCommand = new RemoveLowerCommand(dataBase, commandArgs);
                 break;
 
-                case "history": currentCommand = new HistoryCommand();
+                case "history": currentCommand = new HistoryCommand(commandArgs);
                 break;
 
-                case "remove_greater_key": currentCommand = new RemoveGreaterKeyCommand(dataBase);
+                case "remove_greater_key": currentCommand = new RemoveGreaterKeyCommand(dataBase, commandArgs);
                 break;
 
-                case "min_by_name": currentCommand = new MinByNameCommand(dataBase);
+                case "min_by_name": currentCommand = new MinByNameCommand(dataBase, commandArgs);
                 break;
 
-                case "count_by_transport": currentCommand = new CountByTransportCommand(dataBase);
+                case "count_by_transport": currentCommand = new CountByTransportCommand(dataBase, commandArgs);
                 break;
 
-                case "filter_starts_with_name": currentCommand = new FilterStartsWithName(dataBase);
+                case "filter_starts_with_name": currentCommand = new FilterStartsWithName(dataBase, commandArgs);
                 break;
 
                 default: throw new UnknownCommandException("Unknown command // please try again or enter 'help' or 'exit command");

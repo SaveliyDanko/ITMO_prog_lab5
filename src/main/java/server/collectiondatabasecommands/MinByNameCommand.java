@@ -12,14 +12,15 @@ import server.exceptions.ExitToMenuException;
 
 public class MinByNameCommand implements Command{
     CollectionDataBase dataBase;
-
-    public MinByNameCommand(CollectionDataBase dataBase) {
-        this.dataBase = dataBase;
+    String[] args;
+    public MinByNameCommand(CollectionDataBase dataBase, String[] args) {
+            this.dataBase = dataBase;
+            this.args = args;
     }
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.minByName();
+        dataBase.minByName(args);
     }
 
     @Override

@@ -11,14 +11,16 @@ import server.exceptions.ExitToMenuException;
  */
 public class InsertCommand implements Command{
     CollectionDataBase dataBase;
+    String[] args;
 
-    public InsertCommand(CollectionDataBase dataBase) {
+    public InsertCommand(CollectionDataBase dataBase, String[] args) {
         this.dataBase = dataBase;
+        this.args = args;
     }
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.insert();
+        dataBase.insert(args);
     }
 
     @Override
