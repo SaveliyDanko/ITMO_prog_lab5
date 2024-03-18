@@ -18,7 +18,7 @@ public class FileInputSource implements InputSource {
     /**
      * A collection that contains information from a file
      */
-    public Deque<String> fileCommands = new LinkedList<>();
+    public static Deque<String> fileCommands = new LinkedList<>();
 
 
     /**

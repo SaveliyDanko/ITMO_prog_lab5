@@ -41,6 +41,7 @@
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/database/models/View.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/ViewInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/MinByNameCommand.java
+/home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/ExecuteScriptCommand.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/ClearCommand.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/FlatNumberOfRoomsInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/FlatPriceInput.java
@@ -54,6 +55,7 @@
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/TransportInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/database/IdGenerator.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/ShowCommand.java
+/home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/ExecuteFiles.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/validators/AreaValidator.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/validators/ViewValidator.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/input/UserInputSource.java

@@ -17,7 +17,7 @@ public class Console {
     /**
      * Function that starts the console
      */
-    public static void start(){
+    public static void start() {
         if (AppConfig.appArgs.length != 1){
             OutputManager.logError("Invalid File Path. File path must consist one argument. Try again");
             System.exit(0);

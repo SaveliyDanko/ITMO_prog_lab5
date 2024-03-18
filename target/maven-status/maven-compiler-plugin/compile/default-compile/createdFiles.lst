@@ -1,3 +1,4 @@
+server/collectiondatabasecommands/ExecuteScriptCommand.class
 server/modelinput/HouseInput.class
 App.class
 server/collectiondatabasecommands/UpdateCommand.class
@@ -24,6 +25,7 @@ server/validators/HouseNumberOfLiftsValidator.class
 server/collectiondatabasecommands/ClearCommand.class
 server/input/InputSource.class
 server/modelinput/FlatNumberOfRoomsInput.class
+server/ExecuteFiles.class
 server/validators/ViewValidator.class
 server/validators/FlatPriceValidator.class
 server/modelinput/FlatInput.class

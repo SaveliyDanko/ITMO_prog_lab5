@@ -59,6 +59,9 @@ public class CommandAnalyzer {
                 case "exit": System.exit(0);
                 break;
 
+                case "execute_script": currentCommand = new ExecuteScriptCommand(commandArgs);
+                break;
+
                 case "remove_lower": currentCommand = new RemoveLowerCommand(dataBase, commandArgs);
                 break;
 
@@ -86,6 +89,5 @@ public class CommandAnalyzer {
         catch (UnknownCommandException e){
             OutputManager.logError(e.getMessage());
         }
-
     }
 }
