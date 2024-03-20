@@ -6,8 +6,12 @@ import server.exceptions.ExitToMenuException;
 import server.output.OutputManager;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class ExecuteScriptCommand implements Command {
     String[] args;
@@ -22,20 +26,26 @@ public class ExecuteScriptCommand implements Command {
             OutputManager.logError("Invalid file path");
         }
         else {
-            if (ExecuteFiles.executeFilesSet.add(args[0])){
-                try(BufferedReader bufferedReader = new BufferedReader(new FileReader(args[0]))){
-                    String line;
-                    while((line = bufferedReader.readLine()) != null){
-                        CommandAnalyzer.analyze(line);
+            String classLocation = ExecuteScriptCommand.class.getProtectionDomain().getCodeSource().getLocation().toString();
+            classLocation = classLocation.substring(5);
+            ArrayList<String> array = new ArrayList<>(List.of(classLocation.split(Pattern.quote(File.separator))));
+            array.removeLast();
+            classLocation = String.join("/", array);
+                try(BufferedReader bufferedReader = new BufferedReader(new FileReader(classLocation + "/" + args[0]))){
+                    if (ExecuteFiles.executeFilesSet.add(args[0])) {
+                        String line;
+                        while ((line = bufferedReader.readLine()) != null) {
+                            CommandAnalyzer.analyze(line);
+                        }
+                        ExecuteFiles.executeFilesSet.remove(args[0]);
+                    }
+                    else {
+                        OutputManager.logError("to avoid recursion, it is forbidden to call the file used in the script repeatedly");
                     }
                 }
                 catch (IOException e){
                     OutputManager.logError(e.getMessage());
                 }
             }
-            else {
-                OutputManager.logError("to avoid recursion, it is forbidden to call the file used in the script repeatedly");
-            }
         }
     }
-}
