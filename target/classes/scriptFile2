@@ -1,2 +1,2 @@
 show
-execute_script /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/resources/scriptFile.txt
+execute_script scriptFile.txt
