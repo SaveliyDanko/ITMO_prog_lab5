@@ -11,18 +11,18 @@ import server.output.OutputManager;
 public class FlatNumberOfRoomsValidator {
     public static boolean validator(String x){
         if (x.isEmpty()){
-            OutputManager.logError("Flat `numberOfRooms` cannot be empty // Enter `numberOfRooms` or `q` for exit to menu");
+            OutputManager.logError("Flat `numberOfRooms` cannot be empty");
             return false;
         }
         try{
             Long.parseLong(x);
         }
         catch (NumberFormatException e){
-            OutputManager.logError("The Flat `numberOfRooms` must be `long` value // Enter `numberOfRooms` or `q` for exit to menu");
+            OutputManager.logError("The Flat `numberOfRooms` must be `long` value");
             return false;
         }
         if (Float.parseFloat(x) <= 0){
-            OutputManager.logError("The Flat `numberOfRooms` must be more than 0 // Enter `numberOfRooms` or `q` for exit to menu");
+            OutputManager.logError("The Flat `numberOfRooms` must be more than 0");
             return false;
         }
         return true;

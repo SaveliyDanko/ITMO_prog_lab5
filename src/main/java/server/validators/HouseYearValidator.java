@@ -11,18 +11,18 @@ import server.output.OutputManager;
 public class HouseYearValidator {
     public static boolean validator(String year){
         if (year.isEmpty()){
-            OutputManager.logError("House year cannot be empty // Enter y or `q` for exit to menu");
+            OutputManager.logError("House year cannot be empty");
             return false;
         }
         try{
             Long.parseLong(year);
         }
         catch (NumberFormatException e){
-            OutputManager.logError("The House year must be `long` value // Enter year or `q` for exit to menu");
+            OutputManager.logError("The House year must be `long` value");
             return false;
         }
         if (Long.parseLong(year) <= 0){
-            OutputManager.logError("The House year must be more than 0 // Enter year or `q` for exit to menu");
+            OutputManager.logError("The House year must be more than 0");
             return false;
         }
         return true;

@@ -12,18 +12,18 @@ import server.output.OutputManager;
 public class FlatPriceValidator {
     public static boolean validator(String price){
         if (price.isEmpty()){
-            OutputManager.logError("`price` cannot be empty // Enter x or `q` for exit to menu");
+            OutputManager.logError("`price` cannot be empty");
             return false;
         }
         try{
             Float.parseFloat(price);
         }
         catch (NumberFormatException e){
-            OutputManager.logError("The `price` must be `float' value // Enter `price` or `q` for exit to menu");
+            OutputManager.logError("The `price` must be `float' value");
             return false;
         }
         if (Float.parseFloat(price) <= 0){
-            OutputManager.logError("The `price` must be more than 0 // Enter `price` or `q` for exit to menu");
+            OutputManager.logError("The `price` must be more than 0");
             return false;
         }
         return true;

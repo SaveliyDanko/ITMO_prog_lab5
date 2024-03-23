@@ -11,11 +11,11 @@ import server.output.OutputManager;
 public class NameValidator {
     public static boolean validate(String name){
         if (name.isEmpty()){
-            OutputManager.logError("Name cannot be empty // Enter `name` or `q` for exit to menu");
+            OutputManager.logError("Name cannot be empty");
             return false;
         }
         else if (name.contains(",")){
-            OutputManager.logError("Name cannot contains coma \",\" // Enter `name` or `q` for exit to menu");
+            OutputManager.logError("Name cannot contains coma \",\"");
             return false;
         }
         else return true;

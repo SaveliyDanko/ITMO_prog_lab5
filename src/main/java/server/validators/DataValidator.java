@@ -23,7 +23,6 @@ public class DataValidator {
             return true;
         }
         else {
-            System.out.println("here");
             return false;
         }
     }

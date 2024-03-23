@@ -11,18 +11,18 @@ import server.output.OutputManager;
 public class HouseNumberOfFlatsOnFloorValidator {
     public static boolean validator(String numberOfFloors){
         if (numberOfFloors.isEmpty()){
-            OutputManager.logError("House numberOfFlatsOnFloor cannot be empty // Enter numberOfFlatsOnFloor or `q` for exit to menu");
+            OutputManager.logError("House numberOfFlatsOnFloor cannot be empty");
             return false;
         }
         try{
             Long.parseLong(numberOfFloors);
         }
         catch (NumberFormatException e){
-            OutputManager.logError("The House numberOfFlatsOnFloor must be `long` value // Enter numberOfFlatsOnFloor or `q` for exit to menu");
+            OutputManager.logError("The House numberOfFlatsOnFloor must be `long` value");
             return false;
         }
         if (Long.parseLong(numberOfFloors) <= 0){
-            OutputManager.logError("The House numberOfFlatsOnFloor must be more than 0 // Enter numberOfFlatsOnFloor or `q` for exit to menu");
+            OutputManager.logError("The House numberOfFlatsOnFloor must be more than 0");
             return false;
         }
         return true;
