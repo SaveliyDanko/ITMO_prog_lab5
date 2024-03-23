@@ -1,3 +1,0 @@
-info
-execute_script scriptFile2
-help

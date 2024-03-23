@@ -4,7 +4,6 @@ import server.CommandAnalyzer;
 import server.ExecuteFiles;
 import server.exceptions.ExitToMenuException;
 import server.output.OutputManager;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -40,7 +39,7 @@ public class ExecuteScriptCommand implements Command {
                         ExecuteFiles.executeFilesSet.remove(args[0]);
                     }
                     else {
-                        OutputManager.logError("to avoid recursion, it is forbidden to call the file used in the script repeatedly");
+                        OutputManager.logError("To avoid recursion, it is forbidden to call the file used in the script repeatedly");
                     }
                 }
                 catch (IOException e){
