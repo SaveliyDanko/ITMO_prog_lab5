@@ -2,7 +2,6 @@ server/collectiondatabasecommands/ExecuteScriptCommand.class
 server/modelinput/HouseInput.class
 App.class
 server/collectiondatabasecommands/UpdateCommand.class
-Test.class
 server/CsvFileManager.class
 database/models/House.class
 server/collectiondatabasecommands/RemoveLowerCommand.class
