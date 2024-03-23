@@ -28,6 +28,6 @@ public class CollectionDataBaseHelpInformation {
             ANSI_PURPLE + "history" + ANSI_RESET + " : вывести последние 12 команд (без их аргументов)\n" +
             ANSI_PURPLE + "remove_greater_key id" + ANSI_RESET + " : удалить из коллекции все элементы, ключ которых превышает заданный\n" +
             ANSI_PURPLE + "min_by_name" + ANSI_RESET + " : вывести любой объект из коллекции, значение поля name которого является минимальным\n" +
-            ANSI_PURPLE + "count_by_transport transport" + ANSI_RESET + " : вывести количество элементов, значение поля transport которых равно заданному\n" +
+            ANSI_PURPLE + "count_by_transport" + ANSI_RESET + " : вывести количество элементов, значение поля transport которых равно заданному\n" +
             ANSI_PURPLE + "filter_starts_with_name name" + ANSI_RESET + " : вывести элементы, значение поля name которых начинается с заданной подстроки";
 }

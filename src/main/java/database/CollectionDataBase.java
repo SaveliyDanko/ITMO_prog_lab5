@@ -321,12 +321,17 @@ public class CollectionDataBase implements DataBaseI{
             OutputManager.logError("Incorrect arguments // please try again or enter 'help' or 'exit command");
         }
         else {
+            int c = 0;
             String name = args[0];
             if (NameValidator.validate(name)){
                 for (Flat flat : collection.values()){
                     if (flat.getName().startsWith(name)){
+                        c ++;
                         OutputManager.stOutput(flat.getName());
                     }
+                }
+                if (c == 0){
+                    OutputManager.stOutput("No such same");
                 }
                 OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
             }
