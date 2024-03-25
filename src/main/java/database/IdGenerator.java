@@ -17,10 +17,10 @@ public class IdGenerator {
      */
         public static long generateId() {
             CollectionDataBase dataBase = CollectionDataBase.getDataBaseInstance();
-            UUID uuid = UUID.randomUUID();
-            while (dataBase.getDataBase().containsKey(Long.parseLong(uuid.toString()))){
-                uuid = UUID.randomUUID();
+            long uuid = UUID.randomUUID().getLeastSignificantBits();
+            while (dataBase.getDataBase().containsKey(Long.parseLong(Long.toString(uuid)))){
+                uuid = UUID.randomUUID().getLeastSignificantBits();
             }
-            return Long.parseLong(uuid.toString());
+            return Long.parseLong(Long.toString(uuid));
     }
 }
