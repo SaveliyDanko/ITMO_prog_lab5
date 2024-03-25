@@ -1,7 +1,5 @@
 package database.models;
 
-import database.IdGenerator;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -45,7 +43,7 @@ public class Flat implements Comparable<Flat>, Serializable {
     /**
      * area value
      */
-    private final float area; //Значение поля должно быть больше 0
+    private final float area; //Значение поля должно     быть больше 0
 
     /**
      * numberOfRooms value
@@ -72,13 +70,14 @@ public class Flat implements Comparable<Flat>, Serializable {
      */
     private final House house; //Поле не может быть null
 
+    private static long nextId = 1;
     public Flat(String name, Coordinates coordinates, float area, long numberOfRooms, Float price,
                 View view, Transport transport, House house) {
-        if (name == null || name.isEmpty() || area <= 0 || numberOfRooms <= 0 || price <= 0 || transport == null || house == null) {
+        if (name == null || name.isEmpty() || area <= 0 || numberOfRooms <= 0 || price <= 0 ||  house == null) {
             throw new IllegalArgumentException("Invalid parameter value.");
         }
         // automatic generate id
-        this.id = IdGenerator.generateUniqueId();
+        this.id = nextId++;
         this.name = name;
         this.coordinates = coordinates;
 

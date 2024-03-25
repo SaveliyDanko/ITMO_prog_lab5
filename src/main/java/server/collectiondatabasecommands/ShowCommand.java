@@ -1,6 +1,13 @@
 package server.collectiondatabasecommands;
 
+import client.MessageConstant;
 import database.CollectionDataBase;
+import database.models.Flat;
+import server.output.OutputManager;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Show command implementation for the Command design pattern
@@ -19,7 +26,25 @@ public class ShowCommand implements Command{
 
     @Override
     public void execute() {
-        dataBase.show(args);
+        if (args.length != 0){
+            OutputManager.logError("Show command should not have arguments");
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+        }
+        else {
+            if (!dataBase.getDataBase().isEmpty()){
+                Map<Long, Flat> sortedMap = new TreeMap<>(dataBase.getDataBase());
+                LinkedHashMap<Long, Flat> sortedLinkedHashMap = new LinkedHashMap<>(sortedMap);
+
+
+                OutputManager.stOutput("Data Base elements:");
+                for (Map.Entry<Long, Flat> item : sortedLinkedHashMap.entrySet()){
+                    OutputManager.stOutput(item.toString());
+                }
+                OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+            }
+            else OutputManager.stOutput("DataBase is empty\n" +
+                    MessageConstant.CONSOLE_MESSAGE);
+        }
     }
 
     @Override

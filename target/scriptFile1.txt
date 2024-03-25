@@ -1,0 +1,3 @@
+info
+execute_script scriptFile2.txt
+help

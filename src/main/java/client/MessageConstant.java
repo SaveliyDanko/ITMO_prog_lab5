@@ -21,12 +21,14 @@ public class MessageConstant {
                     1. STREET
                     2. YARD
                     3. PARK
-                    4. NORMAL""";
+                    4. NORMAL
+                    5. null""";
 
     public static final String TRANSPORT_INPUT = """
                     Enter Transport number or `q` for exit:
                     1. FEW
                     2. NONE
                     3. LITTLE
-                    4. NORMAL""";
+                    4. NORMAL
+                    5. null""";
 }

@@ -22,6 +22,7 @@ server/collectiondatabasecommands/RemoveGreaterKeyCommand.class
 server/collectiondatabasecommands/SaveCommand.class
 database/models/Transport.class
 server/validators/HouseNumberOfLiftsValidator.class
+database/IdGenerator$GenerateID.class
 server/collectiondatabasecommands/ClearCommand.class
 server/input/InputSource.class
 server/modelinput/FlatNumberOfRoomsInput.class

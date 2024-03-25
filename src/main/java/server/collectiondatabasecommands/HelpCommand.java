@@ -1,6 +1,9 @@
 package server.collectiondatabasecommands;
 
+import client.MessageConstant;
 import database.CollectionDataBase;
+import database.CollectionDataBaseHelpInformation;
+import server.output.OutputManager;
 
 /**
  * Help command implementation for the Command design pattern
@@ -20,7 +23,14 @@ public class HelpCommand implements Command{
 
     @Override
     public void execute(){
-        dataBase.help(args);
+        if (args.length != 0){
+            OutputManager.logError("Help command should not have arguments");
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+        }
+        else {
+            OutputManager.stOutput(CollectionDataBaseHelpInformation.HELP_MESSAGE);
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+        }
     }
 
     @Override

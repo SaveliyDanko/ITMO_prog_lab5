@@ -1,6 +1,8 @@
 package server.collectiondatabasecommands;
 
+import client.MessageConstant;
 import database.CollectionDataBase;
+import server.output.OutputManager;
 
 /**
  * Info command implementation for the Command design pattern
@@ -19,7 +21,16 @@ public class InfoCommand implements Command{
 
     @Override
     public void execute() {
-        dataBase.info(args);
+        if (args.length != 0){
+            OutputManager.logError("Info command should not have arguments");
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+        }
+        else {
+            OutputManager.stOutput("Data Base type:" + dataBase.getDataBase().getClass().getName());
+            OutputManager.stOutput("Data Base initialization time: " + dataBase.initializationTime);
+            OutputManager.stOutput("The number of items in the collection: " + dataBase.getDataBase().size());
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+        }
     }
 
     @Override

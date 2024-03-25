@@ -1,7 +1,10 @@
 package server.collectiondatabasecommands;
 
+import client.MessageConstant;
 import database.CollectionDataBase;
+import database.models.Flat;
 import server.exceptions.ExitToMenuException;
+import server.output.OutputManager;
 
 /**
  * Min By Name command implementation for the Command design pattern
@@ -20,7 +23,20 @@ public class MinByNameCommand implements Command{
 
     @Override
     public void execute() throws ExitToMenuException {
-        dataBase.minByName(args);
+        if (args.length != 0){
+            OutputManager.logError("Min By Name lower command should not have arguments");
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+        }
+        else {
+            String minName = dataBase.getDataBase().sequencedValues().getFirst().getName();
+            for (Flat flat : dataBase.getDataBase().values()){
+                if (flat.getName().compareTo(minName) < 0){
+                    minName = flat.getName();
+                }
+            }
+            OutputManager.stOutput(minName);
+            OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
+        }
     }
 
     @Override

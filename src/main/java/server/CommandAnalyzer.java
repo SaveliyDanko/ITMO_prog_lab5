@@ -7,6 +7,7 @@ import server.exceptions.UnknownCommandException;
 import server.output.OutputManager;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * A class that analyzes user input
@@ -26,66 +27,41 @@ public class CommandAnalyzer {
     public static void analyze(String line) throws ExitToMenuException{
         CommandManager commandManager = CommandManager.getCommandManagerInstance();
         CollectionDataBase dataBase = CollectionDataBase.getDataBaseInstance();
-        Command currentCommand = null;
+        Command currentCommand;
+
 
         String[] commandArgs = Arrays.copyOfRange(line.split(" "), 1, line.split(" ").length);
+
+        HashMap<String, Command> commandHashMap = new HashMap<>();
+
+        commandHashMap.put("help", new HelpCommand(dataBase, commandArgs));
+        commandHashMap.put("info", new InfoCommand(dataBase, commandArgs));
+        commandHashMap.put("show", new ShowCommand(dataBase, commandArgs));
+        commandHashMap.put("insert", new InsertCommand(dataBase, commandArgs));
+        commandHashMap.put("update", new UpdateCommand(dataBase, commandArgs));
+        commandHashMap.put("remove_key", new RemoveCommand(dataBase, commandArgs));
+        commandHashMap.put("clear", new ClearCommand(dataBase, commandArgs));
+        commandHashMap.put("save", new SaveCommand(dataBase, commandArgs));
+        commandHashMap.put("remove_lower", new RemoveLowerCommand(dataBase, commandArgs));
+        commandHashMap.put("min_by_name", new MinByNameCommand(dataBase, commandArgs));
+        commandHashMap.put("remove_greater_key", new RemoveGreaterKeyCommand(dataBase, commandArgs));
+        commandHashMap.put("count_by_transport", new CountByTransportCommand(dataBase, commandArgs));
+        commandHashMap.put("filter_starts_with_name", new FilterStartsWithName(dataBase, commandArgs));
+        commandHashMap.put("history", new HistoryCommand(commandArgs));
+
         try {
-            switch (line.split(" ")[0]){
-
-                case "help": currentCommand = new HelpCommand(dataBase, commandArgs);
-                break;
-
-                case "info": currentCommand = new InfoCommand(dataBase, commandArgs);
-                break;
-
-                case "show": currentCommand = new ShowCommand(dataBase, commandArgs);
-                break;
-
-                case "insert": currentCommand = new InsertCommand(dataBase, commandArgs);
-                break;
-
-                case "update": currentCommand = new UpdateCommand(dataBase, commandArgs);
-                break;
-
-                case "remove_key": currentCommand = new RemoveCommand(dataBase, commandArgs);
-                break;
-
-                case "clear": currentCommand = new ClearCommand(dataBase, commandArgs);
-                break;
-
-                case "save": currentCommand = new SaveCommand(dataBase, commandArgs);
-                break;
-
-                case "exit": System.exit(0);
-                break;
-
-                case "execute_script": currentCommand = new ExecuteScriptCommand(commandArgs);
-                break;
-
-                case "remove_lower": currentCommand = new RemoveLowerCommand(dataBase, commandArgs);
-                break;
-
-                case "history": currentCommand = new HistoryCommand(commandArgs);
-                break;
-
-                case "remove_greater_key": currentCommand = new RemoveGreaterKeyCommand(dataBase, commandArgs);
-                break;
-
-                case "min_by_name": currentCommand = new MinByNameCommand(dataBase, commandArgs);
-                break;
-
-                case "count_by_transport": currentCommand = new CountByTransportCommand(dataBase, commandArgs);
-                break;
-
-                case "filter_starts_with_name": currentCommand = new FilterStartsWithName(dataBase, commandArgs);
-                break;
-
-                default: throw new UnknownCommandException("Unknown command // please try again or enter 'help' or 'exit command");
+            if (commandHashMap.containsKey(line.split(" ")[0])){
+                currentCommand = commandHashMap.get(line.split(" ")[0]);
+                commandManager.setCommand(currentCommand);
+                commandManager.executeCommand();
+            } else if (line.equals("exit")) {
+                System.exit(0);
             }
-
-            commandManager.setCommand(currentCommand);
-            commandManager.executeCommand();
+            else {
+                throw new UnknownCommandException("Unknown command // please try again or enter 'help' or 'exit command");
+            }
         }
+
         catch (UnknownCommandException e){
             OutputManager.logError(e.getMessage());
         }

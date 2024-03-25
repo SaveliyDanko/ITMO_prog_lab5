@@ -40,6 +40,9 @@ public class TransportInput {
                     case "4":
                         transport = Transport.NORMAL;
                         break label;
+                    case "5":
+                        transport = null;
+                        break label;
                     default:
                         OutputManager.stOutput("Unknown Command // Try again // " +
                                 MessageConstant.TRANSPORT_INPUT);

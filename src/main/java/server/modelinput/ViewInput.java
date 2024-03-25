@@ -41,6 +41,9 @@ public class ViewInput {
                     case "4":
                         view = View.NORMAL;
                         break label;
+                    case "5":
+                        view = null;
+                        break label;
                     default:
                         OutputManager.stOutput("Unknown Command // Try again // " +
                                 MessageConstant.VIEW_INPUT);
