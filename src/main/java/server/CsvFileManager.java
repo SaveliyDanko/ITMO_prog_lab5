@@ -99,6 +99,7 @@ public class CsvFileManager {
             }
         }catch (IOException e){
             OutputManager.logError(e.getMessage());
+            System.exit(0);
         }
     }
 

@@ -1,5 +1,6 @@
 package server.collectiondatabasecommands;
 
+import client.MessageConstant;
 import server.CommandAnalyzer;
 import server.ExecuteFiles;
 import server.exceptions.ExitToMenuException;
@@ -44,6 +45,7 @@ public class ExecuteScriptCommand implements Command {
                 }
                 catch (IOException e){
                     OutputManager.logError(e.getMessage());
+                    OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
                 }
             }
         }

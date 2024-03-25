@@ -1,2 +1,0 @@
-show
-execute_script scriptFile1.txt
