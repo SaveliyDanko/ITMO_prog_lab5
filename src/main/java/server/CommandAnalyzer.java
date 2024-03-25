@@ -17,7 +17,6 @@ import java.util.HashMap;
  */
 
 public class CommandAnalyzer {
-
     /**
      * A function that processes input and defines commands
      *
@@ -25,6 +24,7 @@ public class CommandAnalyzer {
      * @throws ExitToMenuException exception, that discard user into menu
      */
     public static void analyze(String line) throws ExitToMenuException{
+
         CommandManager commandManager = CommandManager.getCommandManagerInstance();
         CollectionDataBase dataBase = CollectionDataBase.getDataBaseInstance();
         Command currentCommand;

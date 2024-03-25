@@ -42,8 +42,10 @@ public class NameInput {
                 name = CurrentInputMode.getNextLine();
                 if (name.equals("q")){
                     throw new ExitToMenuException(MessageConstant.EXIT_TO_MENU);
-                }
-                else if(NameValidator.validate(name)){
+                } else if (name.equals("null")) {
+                    name = null;
+                    break;
+                } else if(NameValidator.validate(name)){
                     break;
                 }
             }
