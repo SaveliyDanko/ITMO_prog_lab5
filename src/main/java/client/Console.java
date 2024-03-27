@@ -7,7 +7,7 @@ import server.input.EInputMode;
 import server.input.UserInputSource;
 import server.output.OutputManager;
 import java.io.File;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -29,7 +29,7 @@ public class Console {
         else {
             String classLocation = Console.class.getProtectionDomain().getCodeSource().getLocation().toString();
             classLocation = classLocation.substring(5);
-            ArrayList<String> array = new ArrayList<>(List.of(classLocation.split(Pattern.quote(File.separator))));
+            LinkedList<String> array = new LinkedList<>(List.of(classLocation.split(Pattern.quote(File.separator))));
             array.removeLast();
             classLocation = String.join(File.separator, array);
             AppConfig.csvFilePath = classLocation + File.separator + AppConfig.appArgs[0];

@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -28,7 +28,7 @@ public class ExecuteScriptCommand implements Command {
         else {
             String classLocation = ExecuteScriptCommand.class.getProtectionDomain().getCodeSource().getLocation().toString();
             classLocation = classLocation.substring(5);
-            ArrayList<String> array = new ArrayList<>(List.of(classLocation.split(Pattern.quote(File.separator))));
+            LinkedList<String> array = new LinkedList<>(List.of(classLocation.split(Pattern.quote(File.separator))));
             array.removeLast();
             classLocation = String.join("/", array);
                 try(BufferedReader bufferedReader = new BufferedReader(new FileReader(classLocation + "/" + args[0]))){

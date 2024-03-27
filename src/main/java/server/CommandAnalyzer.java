@@ -26,13 +26,13 @@ public class CommandAnalyzer {
     public static void analyze(String line) throws ExitToMenuException{
 
         CommandManager commandManager = CommandManager.getCommandManagerInstance();
-        CollectionDataBase dataBase = CollectionDataBase.getDataBaseInstance();
         Command currentCommand;
 
+        HashMap<String, Command> commandHashMap = new HashMap<>();
+
+        CollectionDataBase dataBase = CollectionDataBase.getDataBaseInstance();
 
         String[] commandArgs = Arrays.copyOfRange(line.split(" "), 1, line.split(" ").length);
-
-        HashMap<String, Command> commandHashMap = new HashMap<>();
 
         commandHashMap.put("help", new HelpCommand(dataBase, commandArgs));
         commandHashMap.put("info", new InfoCommand(dataBase, commandArgs));
@@ -48,14 +48,14 @@ public class CommandAnalyzer {
         commandHashMap.put("count_by_transport", new CountByTransportCommand(dataBase, commandArgs));
         commandHashMap.put("filter_starts_with_name", new FilterStartsWithName(dataBase, commandArgs));
         commandHashMap.put("history", new HistoryCommand(commandArgs));
+        commandHashMap.put("execute_script", new ExecuteScriptCommand(commandArgs));
+        commandHashMap.put("exit", new ExitCommand());
 
         try {
             if (commandHashMap.containsKey(line.split(" ")[0])){
                 currentCommand = commandHashMap.get(line.split(" ")[0]);
                 commandManager.setCommand(currentCommand);
                 commandManager.executeCommand();
-            } else if (line.equals("exit")) {
-                System.exit(0);
             }
             else {
                 throw new UnknownCommandException("Unknown command // please try again or enter 'help' or 'exit command");
