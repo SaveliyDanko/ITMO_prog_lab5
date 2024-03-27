@@ -21,6 +21,6 @@ public class IdGenerator {
             while (dataBase.getDataBase().containsKey(Long.parseLong(Long.toString(uuid)))){
                 uuid = UUID.randomUUID().getLeastSignificantBits();
             }
-            return Long.parseLong(Long.toString(uuid));
+            return Math.abs(Long.parseLong(Long.toString(uuid)));
     }
 }
