@@ -1,6 +1,7 @@
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/validators/FlatPriceValidator.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/database/CollectionDataBase.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/validators/TransportValidator.java
+/home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/ExitCommand.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/output/OutputManager.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/modelinput/HouseNumberOfLiftsInput.java
 /home/savadanko/ITMO/programming/ITMO_prog_lab5/src/main/java/server/collectiondatabasecommands/HistoryCommand.java

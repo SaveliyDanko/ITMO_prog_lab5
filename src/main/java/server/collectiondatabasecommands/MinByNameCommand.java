@@ -28,7 +28,7 @@ public class MinByNameCommand implements Command{
             OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
         }
         else {
-            String minName = dataBase.getDataBase().values().stream().toList().getFirst().getName();
+            String minName = dataBase.getDataBase().values().stream().toList().get(0).getName();
             for (Flat flat : dataBase.getDataBase().values()){
                 if (flat.getName().compareTo(minName) < 0){
                     minName = flat.getName();

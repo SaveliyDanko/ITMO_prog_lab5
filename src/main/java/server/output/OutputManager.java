@@ -8,8 +8,8 @@ package server.output;
  */
 
 public class OutputManager {
-    public static final String ANSI_RED = "\u001B[31m";
-    final static String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_RED = "\u001B[31m";
+    private final static String ANSI_RESET = "\u001B[0m";
 
     /**
      * The function that is responsible for error output*

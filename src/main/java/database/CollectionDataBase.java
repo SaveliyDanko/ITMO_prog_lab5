@@ -24,7 +24,7 @@ public class CollectionDataBase implements DataBaseI{
      */
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm");
     LocalDateTime now = LocalDateTime.now();
-    public String initializationTime = now.format(formatter);
+    String initializationTime = now.format(formatter);
 
     // Singleton realization
     private static final CollectionDataBase dataBaseInstance = new CollectionDataBase();
@@ -39,5 +39,9 @@ public class CollectionDataBase implements DataBaseI{
      */
     public LinkedHashMap<Long, Flat> getDataBase() {
         return collection;
+    }
+
+    public String getInitializationTime(){
+        return initializationTime;
     }
 }

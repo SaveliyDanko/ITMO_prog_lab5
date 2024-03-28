@@ -27,7 +27,7 @@ public class InfoCommand implements Command{
         }
         else {
             OutputManager.stOutput("Data Base type:" + dataBase.getDataBase().getClass().getName());
-            OutputManager.stOutput("Data Base initialization time: " + dataBase.initializationTime);
+            OutputManager.stOutput("Data Base initialization time: " + dataBase.getInitializationTime());
             OutputManager.stOutput("The number of items in the collection: " + dataBase.getDataBase().size());
             OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
         }

@@ -3,8 +3,8 @@ server/modelinput/HouseInput.class
 App.class
 server/collectiondatabasecommands/UpdateCommand.class
 server/CsvFileManager.class
-database/models/House.class
 server/collectiondatabasecommands/RemoveLowerCommand.class
+database/models/House.class
 database/DataBaseI.class
 server/CommandManager.class
 server/validators/IdValidator.class
@@ -67,6 +67,7 @@ server/modelinput/AreaInput.class
 server/validators/DataValidator.class
 server/modelinput/CoordinatesInput.class
 server/collectiondatabasecommands/InsertCommand.class
+server/collectiondatabasecommands/ExitCommand.class
 server/collectiondatabasecommands/HelpCommand.class
 server/modelinput/NameInput.class
 database/IdGenerator.class

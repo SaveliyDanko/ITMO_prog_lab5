@@ -1,6 +1,6 @@
 package server.modelinput;
 
-import server.input.CurrentInputMode;
+import server.input.InputManager;
 import server.input.EInputMode;
 import client.MessageConstant;
 import server.output.OutputManager;
@@ -20,8 +20,8 @@ public class IdInput {
         String input;
         long id;
         while (true){
-            if (CurrentInputMode.hasNextLine()){
-                input = CurrentInputMode.getNextLine();
+            if (InputManager.hasNextLine()){
+                input = InputManager.getNextLine();
 
                 if (input.equals("q")){
                     throw new ExitToMenuException(MessageConstant.EXIT_TO_MENU);
@@ -31,7 +31,7 @@ public class IdInput {
                 }
             }
             else {
-                CurrentInputMode.mode = EInputMode.USER_MODE;
+                InputManager.mode = EInputMode.USER_MODE;
             }
         }
         id = Long.parseLong(input);

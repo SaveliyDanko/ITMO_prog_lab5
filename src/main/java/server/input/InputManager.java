@@ -7,7 +7,7 @@ package server.input;
  * @author savadanko
  */
 
-public class CurrentInputMode {
+public class InputManager {
     public static EInputMode mode;
 
     public static UserInputSource userInputSource;

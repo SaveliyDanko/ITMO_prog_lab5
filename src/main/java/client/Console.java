@@ -2,7 +2,7 @@ package client;
 
 import server.*;
 import server.exceptions.ExitToMenuException;
-import server.input.CurrentInputMode;
+import server.input.InputManager;
 import server.input.EInputMode;
 import server.input.UserInputSource;
 import server.output.OutputManager;
@@ -35,13 +35,13 @@ public class Console {
             AppConfig.csvFilePath = classLocation + File.separator + AppConfig.appArgs[0];
             CsvFileManager.collectionFiller(AppConfig.csvFilePath);
 
-            CurrentInputMode.mode = EInputMode.USER_MODE;
-            CurrentInputMode.userInputSource = new UserInputSource();
+            InputManager.mode = EInputMode.USER_MODE;
+            InputManager.userInputSource = new UserInputSource();
             OutputManager.stOutput(MessageConstant.WELCOME_TO_CONSOLE);
             OutputManager.stOutput(MessageConstant.CONSOLE_MESSAGE);
-            while (CurrentInputMode.hasNextLine()){
+            while (InputManager.hasNextLine()){
                 try {
-                    String line = CurrentInputMode.getNextLine();
+                    String line = InputManager.getNextLine();
                     CommandAnalyzer.analyze(line);
                 }
                 catch (ExitToMenuException e){

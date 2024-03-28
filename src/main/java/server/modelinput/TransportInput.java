@@ -1,6 +1,6 @@
 package server.modelinput;
 
-import server.input.CurrentInputMode;
+import server.input.InputManager;
 import server.input.EInputMode;
 import client.MessageConstant;
 import server.output.OutputManager;
@@ -22,8 +22,8 @@ public class TransportInput {
         String input;
         label:
         while (true){
-            if (CurrentInputMode.hasNextLine()){
-                input = CurrentInputMode.getNextLine();
+            if (InputManager.hasNextLine()){
+                input = InputManager.getNextLine();
 
                 switch (input) {
                     case "q":
@@ -50,7 +50,7 @@ public class TransportInput {
                 }
             }
             else {
-                CurrentInputMode.mode = EInputMode.USER_MODE;
+                InputManager.mode = EInputMode.USER_MODE;
             }
         }
         return transport;
